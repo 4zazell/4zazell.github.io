@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <link rel="stylesheet" href="hamilton2style.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale =1">
+    </head>
+    <body>
+
+        <div class="navigation_cls" id="navigationID">
+            <div class="nav__btn" id="navBtn" data-scroll="#introID"></div>
+            <div class="nav__btn" id="navBtn" data-scroll="#advantagesID"></div>
+            <div class="nav__btn" id="navBtn" data-scroll="#numbersID"></div>
+            <div class="nav__btn" id="navBtn" data-scroll="#forTraidersID"></div>
+            <div class="nav__btn" id="navBtn" data-scroll="#forAutorsID"></div>
+            <div class="nav__btn" id="navBtn" data-scroll="#stepsID"></div>
+            <div class="nav__btn" id="navBtn" data-scroll="#theBestID"></div>
+            <div class="nav__btn" id="navBtn" data-scroll="#feedbackID"></div>
+            <div class="nav__btn" id="navBtn" data-scroll="#registrationID"></div>
+        </div>
+
+        <!-- Sprite -->
+        <svg style="display: none;">
+
+            <symbol id="fb" viewBox="0 0 7.937 14">
+                <g>
+                    <path d="M897.691,6485.5h-1.9a3.257,3.257,0,0,0-3.511,3.44v1.59h-1.909a0.3,0.3,0,0,0-.3.29v2.3a0.3,0.3,0,0,0,.3.29h1.909v5.8a0.3,0.3,0,0,0,.3.29h2.489a0.3,0.3,0,0,0,.3-0.29v-5.8H897.6a0.294,0.294,0,0,0,.3-0.29v-2.3a0.262,0.262,0,0,0-.087-0.2,0.285,0.285,0,0,0-.211-0.09h-2.232v-1.34c0-.65.161-0.98,1.042-0.98h1.279a0.292,0.292,0,0,0,.3-0.28v-2.14a0.294,0.294,0,0,0-.3-0.29h0Zm0,0" transform="translate(-890.063 -6485.5)"/>
+                </g>
+            </symbol>
+
+            <symbol id="ok" viewBox="0 0 512.008 512.008">
+                <g>
+                    <g>
+                        <g>
+                            <path d="M256.002,0c-70.592,0-128,57.408-128,128s57.408,128,128,128s128-57.408,128-128S326.594,0,256.002,0z M256.002,192
+                                c-35.296,0-64-28.704-64-64s28.704-64,64-64s64,28.704,64,64S291.298,192,256.002,192z"/>
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <path d="M425.73,252.448c-12.512-12.512-32.736-12.512-45.248,0c-68.608,68.608-180.288,68.608-248.928,0
+                                c-12.512-12.512-32.736-12.512-45.248,0c-12.512,12.512-12.512,32.736,0,45.28c39.808,39.808,90.272,62.496,142.304,68.416
+                                l-91.232,91.232c-12.512,12.512-12.512,32.736,0,45.248s32.736,12.512,45.248,0l73.376-73.376l73.376,73.376
+                                c6.24,6.24,14.432,9.376,22.624,9.376c8.192,0,16.384-3.136,22.624-9.376c12.512-12.512,12.512-32.736,0-45.248l-91.232-91.232
+                                c52.032-5.92,102.496-28.608,142.304-68.416C438.21,285.216,438.21,264.96,425.73,252.448z"/>
+                        </g>
+                    </g>
+                </g>
+            </symbol>
+
+            <symbol id="vk" viewBox="0 0 16.719 9.62">
+                <g>
+                    <path d="M947.156,6496.82c-0.02-.04-0.039-0.08-0.057-0.11a8.711,8.711,0,0,0-1.661-1.94l-0.018-.02-0.009-.01-0.008-.01h-0.009a7.821,7.821,0,0,1-.705-0.72,0.678,0.678,0,0,1-.122-0.71,6.932,6.932,0,0,1,.783-1.15q0.357-.465.566-0.75c1-1.34,1.438-2.21,1.3-2.58l-0.052-.09a0.5,0.5,0,0,0-.269-0.14,1.252,1.252,0,0,0-.557-0.02l-2.506.01a0.359,0.359,0,0,0-.174.01,0.507,0.507,0,0,1-.114.02l-0.043.03-0.034.02a0.547,0.547,0,0,0-.1.09,0.724,0.724,0,0,0-.087.16,13.8,13.8,0,0,1-.931,1.97c-0.215.37-.412,0.68-0.592,0.95a4.614,4.614,0,0,1-.452.59,3.061,3.061,0,0,1-.331.3,0.316,0.316,0,0,1-.226.1c-0.052-.01-0.1-0.03-0.148-0.04a0.55,0.55,0,0,1-.2-0.21,0.994,0.994,0,0,1-.1-0.35c-0.017-.13-0.027-0.25-0.03-0.35s0-.24,0-0.42,0.009-.31.009-0.37c0-.22,0-0.47.013-0.73s0.016-.46.022-0.62,0.009-.31.009-0.48a2.087,2.087,0,0,0-.031-0.4,1.311,1.311,0,0,0-.091-0.28,0.479,0.479,0,0,0-.179-0.21,1,1,0,0,0-.291-0.12,5.392,5.392,0,0,0-1.175-.11,5.318,5.318,0,0,0-2.079.21,1.113,1.113,0,0,0-.331.26c-0.1.13-.119,0.2-0.044,0.21a1.051,1.051,0,0,1,.74.38l0.053,0.1a1.9,1.9,0,0,1,.121.41,4,4,0,0,1,.078.64,6.689,6.689,0,0,1,0,1.1c-0.028.3-.056,0.54-0.082,0.71a1.364,1.364,0,0,1-.117.41c-0.053.11-.087,0.17-0.105,0.2a0.349,0.349,0,0,1-.043.04,0.63,0.63,0,0,1-.236.04,0.558,0.558,0,0,1-.3-0.12,1.8,1.8,0,0,1-.361-0.34,4.128,4.128,0,0,1-.423-0.6c-0.156-.26-0.318-0.56-0.487-0.91l-0.139-.26c-0.087-.16-0.206-0.4-0.356-0.71s-0.285-.62-0.4-0.91a0.531,0.531,0,0,0-.21-0.28l-0.043-.03a0.95,0.95,0,0,0-.139-0.08,1.272,1.272,0,0,0-.2-0.05l-2.384.02a0.606,0.606,0,0,0-.5.16l-0.035.05a0.322,0.322,0,0,0-.026.15,0.669,0.669,0,0,0,.052.23c0.348,0.83.726,1.62,1.136,2.39s0.764,1.39,1.065,1.86,0.609,0.91.922,1.32,0.521,0.68.622,0.8,0.182,0.21.24,0.27l0.217,0.21a4.688,4.688,0,0,0,.614.5,9.513,9.513,0,0,0,.9.58,4.848,4.848,0,0,0,1.144.47,3.744,3.744,0,0,0,1.271.14h1a0.7,0.7,0,0,0,.461-0.19l0.035-.04a0.635,0.635,0,0,0,.065-0.17,0.873,0.873,0,0,0,.031-0.24,2.934,2.934,0,0,1,.056-0.68,1.972,1.972,0,0,1,.148-0.46,1.155,1.155,0,0,1,.187-0.26,0.528,0.528,0,0,1,.148-0.12,0.136,0.136,0,0,1,.07-0.03,0.526,0.526,0,0,1,.491.13,3.061,3.061,0,0,1,.531.51c0.165,0.2.364,0.43,0.6,0.68a4.783,4.783,0,0,0,.609.57l0.174,0.1a1.769,1.769,0,0,0,.452.19,0.952,0.952,0,0,0,.487.05l2.228-.04a0.934,0.934,0,0,0,.513-0.11,0.418,0.418,0,0,0,.218-0.24,0.7,0.7,0,0,0,0-.3,1.064,1.064,0,0,0-.061-0.23h0Zm0,0" transform="translate(-930.531 -6488.13)"/>
+                </g>
+            </symbol>
+
+            <symbol id="tg" viewBox="0 0 18.469 12.25">
+                <g>
+                    <path d="M992.093,6486.63h0a0.313,0.313,0,0,0-.04-0.11h0a0.276,0.276,0,0,0-.072-0.08c-0.006,0-.012-0.01-0.018-0.01a0.209,0.209,0,0,0-.073-0.04c-0.017,0-.035-0.01-0.051-0.01s-0.026-.01-0.041-0.01-0.021.01-.03,0.01h-0.04l-17.847,3.68a0.291,0.291,0,0,0-.242.25,0.313,0.313,0,0,0,.161.32l5.112,2.68,0.9,4.96a0.034,0.034,0,0,0,0,.01,0.4,0.4,0,0,0,0,.07,0.214,0.214,0,0,0,.006.04,0.208,0.208,0,0,0,.034.08l0.006,0.02h0a0.226,0.226,0,0,1,.013.02c0.016,0.02.031,0.03,0.047,0.05h0.009a0.013,0.013,0,0,0,.013.01L980,6498.6a0.028,0.028,0,0,0,.026.01,0.237,0.237,0,0,0,.084.01h0.021a0.3,0.3,0,0,0,.219-0.09l3.406-2.27,3.565,2.32a0.326,0.326,0,0,0,.168.04,0.314,0.314,0,0,0,.1-0.01,0.308,0.308,0,0,0,.191-0.19l4.284-11.58a0.316,0.316,0,0,0,.045-0.16,0.3,0.3,0,0,0-.011-0.05h0Zm-3.561,2.06-7.375,5.4-0.033.03a0.109,0.109,0,0,1-.011.01,0.036,0.036,0,0,1-.018.02c-0.006.01-.01,0.02-0.015,0.03a0.131,0.131,0,0,0-.028.05c0,0.01,0,.01,0,0.01s0,0.01,0,.01l-0.845,2.73-0.669-3.7Zm-7.855,8.88,0.837-2.75,1.3,0.84,0.374,0.24-1.268.84Zm0,0" transform="translate(-973.625 -6486.38)"/>
+                </g>
+            </symbol>
+        </svg>
+
+        <div class="video"><div class="video__child" data-vide-bg="video/hud"></div></div>
+        <!--Intro -->
+        <div class="intro main" id="introID">
+            
+            <div class="container">
+                <div class="container__top">
+
+                    <div class="logo__item">
+                        <div class="logo__left">
+                            <img src="img/logo/intro-logo-crown.png" class="logo__crown">
+                            <img src="img/logo/intro-logo.png" class="logo__img">
+                        </div>
+                        <div class="logo__right">
+                            <img src="img/logo/intro-text.png" class="logo__title">
+                            <div class="logo__text">Dynasty of Investors</div>
+                        </div>    
+                    </div>
+
+                    <div class="line"></div>
+                    <h2>Зарабатывайте<br/>еще больше<br/>на финансовых рынках</h2>
+                    <h2>вместе с Аналитическим порталом #1 в России!</h2>
+                </div>
+
+                <div class="container__bottom">
+
+                    <div class="text">
+                        Аналитические материалы от экспертов и финансовых институтов по всем рынкам, 
+                        мнение и комментарии рядовых пользователей, авторские статьи, западная аналитика, 
+                        уникальные инструменты для оценки ситуации на рынке и многое другое для того, 
+                        чтобы Ваша работа была комфортной, а заработок превзошел все ожидания!
+                    </div>
+
+                    <h6>Регистрируйся, и присоединяйся команде Hamilton</h6>
+
+                    <input type="button" class="btn" value="Зарегистрироваться" id="scrollToLogin">
+                </div>
+            </div>
+        </div>
+
+        <!-- Advantages -->
+        <div class="advantages main" id="advantagesID">
+            <div class="container">
+                <div class="container__top">
+                    <div class="line"></div>
+                    <h2>Приемущества</h2>
+                </div>
+                <div class="container__bottom">
+                    <div class="sub__advantages">
+                        <img class="advantage__img" src="img/advantages/first-advantage.png">
+                        <div class="advantage__text">Аналитический портал #1 <br/>в России</div>
+                    </div>
+
+                    <div class="sub__advantages">
+                        <img class="advantage__img" src="img/advantages/second-advantage.png">
+                        <div class="advantage__text">Возможность дополнительного <br/>заработка для Авторов</div>
+                    </div>
+
+                    <div class="sub__advantages">
+                        <img class="advantage__img" src="img/advantages/third-advantage.png">
+                        <div class="advantage__text">Все рынки и вся аналитическая <br/>информация в одном месте</div>
+                    </div>
+
+                    <div class="sub__advantages">
+                        <img class="advantage__img" src="img/advantages/fourth-advantage.png">
+                        <div class="advantage__text">Обмен важной информацией <br/>и мнением между </div>
+                    </div>
+
+                    <div class="sub__advantages">
+                        <img class="advantage__img" src="img/advantages/fifth-advantage.png">
+                        <div class="advantage__text">Уникальные информеры <br/>для быстрой оценки <br/>ситуации на рынках</div>
+                    </div>
+
+                    <div class="sub__advantages">
+                        <img class="advantage__img" src="img/advantages/sixth-advantage.png">
+                        <div class="advantage__text">Огромная аудитория <br/>от новичков <br/>до профессионалов рынка</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Numbers -->
+        <div class="numbers main" id="numbersID">
+            <div class="container">
+                <div class="container__top">
+                    <h3>Еще больше информаций</h3>
+                    <div class="line"></div>
+                    <h2>Мы в цифрах</h2>
+                </div>
+                <div class="container__bottom">
+                    <div class="sub__number" id="subNumberID">
+                        <div id="numberSum">0</div>
+                        <div class="cirkle"></div>
+                        <h6>Проекту <span id="numberSum">0</span> дней</h6>
+                    </div>
+                    <div class="sub__number" id="subNumberID">
+                        <div id="numberSum">0</div>
+                        <div class="cirkle"></div>
+                        <h6>Нас посетило <span id="numberSum">0</span> человек</h6>
+                    </div>
+                    <div class="sub__number" id="subNumberID">
+                        <div id="numberSum">0</div>
+                        <div class="cirkle"></div>
+                        <h6>К нам присоединилось <span id="numberSum">0</span> пользователей</h6>
+                    </div>
+                    <div class="sub__number" id="subNumberID">
+                        <div id="numberSum">0</div>
+                        <div class="cirkle"></div>
+                        <h6>Опубликовано <span id="numberSum">0</span> аналитических статей</h6>
+                    </div>
+                    <div class="sub__number" id="subNumberID">
+                        <div id="numberSum">0</div>
+                        <div class="cirkle"></div>
+                        <h6>Оставлено <span id="numberSum">0</span> комментария</h6>
+                    </div>
+                    <div class="sub__number" id="subNumberID">
+                        <div id="numberSum">0</div>
+                        <div class="cirkle"></div>
+                        <h6>Заработано $<span id="numberSum">0</span> авторами</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- For traiders -->
+        <div class="fortraiders main" id="forTraidersID">
+            <div class="container">
+                <div class="container__bottom">
+                    <div class="left side">
+                        <img src="img/traiders/traiders-background.png">
+                    </div>
+                    <div class="right side">
+                        <div class="for">
+                            <h3>То, что действительно важно</h3>
+                            <div class="line"></div>
+                            <h2>Аналитикам и Трейдерам</h2>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><span>Актуальные аналитические обзоры, статьи, сводки прогнозы <br/>и пресс-релизы</span></li>
+                                <li><span>Все финансовые рынки: валюта, металлы, сырье, товары, <br/>акции, индексы и криптовалюта</span></li>
+                                <li><span>Уникальные инструменты для быстрой оценки и анализа ситуации <br/>на рынках</span></li>
+                                <li><span>Возможность общения и обмена информацией <br/>с участниками рынка</span></li>
+                                <li><span>Удобная и простая навигация на портале</span></li>
+                                <li><span>Вся информация предоставляется абсолютно бесплатно</span></li>
+                            </ul>
+
+                            <input type="button" class="btn" value="Зараработать еще больше">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- For autors -->
+        <div class="forautors main" id="forAutorsID">
+            <div class="container">
+                <div class="container__bottom">
+                    <div class="left side">
+                        <div class="for">
+                            <h3>Платим за ваше мнение</h3>
+                            <div class="line"></div>
+                            <h2>Авторам</h2>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><span>Получайте вознаграждение за свои аналитические обзоры, статьи <br/>и прогнозы</span></li>
+                                <li><span>Карьерный и материальный рост на портале <br/>в зависимости от статуса: Новичок, Аналитик, Трейдер, Гуру рынка</span></li>
+                                <li><span>Попадите в ТОП Авторов и станьте успешными <br/>и узнаваемым в финансовом мире</span></li>
+                                <li><span>Удобный и понятный в навигации личный кабинет</span></li>
+                                <li><span>Прозрачность всех операций</span></li>
+                                <li><span>Гарантия выплаты</span></li>
+                            </ul>
+
+                            <input type="button" class="btn" value="Стать успешным автором">
+
+                        </div>
+                    </div>
+                    <div class="right side">
+                        <img src="img/traiders/autors-background.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Steps -->
+        <div class="steps main" id="stepsID">
+            <div class="container">
+                <div class="container__top">
+                    <h3>Авторские</h3>
+                    <div class="line"></div>
+                    <h2>Шаги к успеху</h2>
+                </div>
+                <div class="container__bottom">
+
+                    <div class="sub__steps" id="subStepID">
+                        <div class="step__top"><img src="img/li/step-li.png"><div class="step__num">01</div></div>
+                        <div class="step__bottom">Зарегестрируйтесь на портале</div>
+                    </div>
+
+                    <div class="sub__steps" id="subStepID">
+                        <div class="step__top"><img src="img/li/step-li.png"><div class="step__num">02</div></div>
+                        <div class="step__bottom">Подтвердите свои контактные данные</div>
+                    </div>
+
+                    <div class="sub__steps" id="subStepID">
+                        <div class="step__top"><img src="img/li/step-li.png"><div class="step__num">03</div></div>
+                        <div class="step__bottom">Напишите и отправьте аналитический материал</div>
+                    </div>
+
+                    <div class="sub__steps" id="subStepID">
+                        <div class="step__top"><img src="img/li/step-li.png"><div class="step__num">04</div></div>
+                        <div class="step__bottom">Дождитесь решения модерации</div>
+                    </div>
+
+                    <div class="sub__steps" id="subStepID">
+                        <div class="step__top"><img src="img/li/step-li.png"><div class="step__num">05</div></div>
+                        <div class="step__bottom">Получите вознаграждение</div>
+                    </div>
+
+                    <div class="sub__steps" id="subStepID">
+                        <div class="step__top"><img src="img/li/step-li.png"><div class="step__num">06</div></div>
+                        <div class="step__bottom">Повышайте свой рейтинг и статус и зарабатывайте еще больше!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The best -->
+        <div class="thebest main" id="theBestID">
+            <div class="container">
+                <div class="container__top">
+                    <h3>Лучшие из лучших</h3>
+                    <div class="line"></div>
+                    <h2>Топ авторов</h2>
+                </div>
+                <div class="container__bottom">
+
+                    <div class="cart" id="cartID" data-focus="0">
+                        <div class="raiting"><h4>Рэйтинг</h4><div>9.2</div></div>
+                        <div class="line"></div>
+                        <img src="img/top-autors/human.jpg" class="human__img">
+                        <div class="name">Олег Тимофенко</div>
+                    </div>
+
+                    <div class="cart" id="cartID" data-focus="1">
+                        <div class="raiting"><h4>Рэйтинг</h4><div>8.8</div></div>
+                        <div class="line"></div>
+                        <img src="img/top-autors/human.jpg" class="human__img">
+                        <div class="name">Олег Тимофенко</div>
+                    </div>
+
+                    <div class="cart" id="cartID" data-focus="2">
+                        <div class="raiting"><h4>Рэйтинг</h4><div>8.0</div></div>
+                        <div class="line"></div>
+                        <img src="img/top-autors/human.jpg" class="human__img">
+                        <div class="name">Олег Тимофенко</div>
+                    </div>
+
+                    <div class="cart" id="cartID" data-focus="3">
+                        <div class="raiting"><h4>Рэйтинг</h4><div>7.5</div></div>
+                        <div class="line"></div>
+                        <img src="img/top-autors/human.jpg" class="human__img">
+                        <div class="name">Олег Тимофенко</div>
+                    </div>
+
+                    <div class="cart" id="cartID" data-focus="4">
+                        <div class="raiting"><h4>Рэйтинг</h4><div>6.0</div></div>
+                        <div class="line"></div>
+                        <img src="img/top-autors/human.jpg" class="human__img">
+                        <div class="name">Олег Тимофенко</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Comments -->
+        <div class="feedback main" id="feedbackID">
+            <div class="container">
+                <div class="container__top">
+                    <h3>О нас говорят</h3>
+                    <div class="line"></div>
+                    <h2>Отзывы</h2>
+                </div>
+                <div class="container__bottom">
+
+                    <div class="feedback__images">
+                        <div class="btn__image" id="btnFeedbackImg" data-slick="1"><img src="img/top-autors/feedbacker.jpg"></div>
+                        <div class="btn__image" id="btnFeedbackImg" data-slick="2"><img src="img/top-autors/feedbacker.jpg"></div>
+                        <div class="btn__image" id="btnFeedbackImg" data-slick="3"><img src="img/top-autors/feedbacker.jpg"></div>
+                        <div class="btn__image" id="btnFeedbackImg" data-slick="4"><img src="img/top-autors/feedbacker.jpg"></div>
+                        <div class="btn__image" id="btnFeedbackImg" data-slick="5"><img src="img/top-autors/feedbacker.jpg"></div>
+                        <div class="btn__image" id="btnFeedbackImg" data-slick="6"><img src="img/top-autors/feedbacker.jpg"></div>
+                        <div class="btn__image" id="btnFeedbackImg" data-slick="7"><img src="img/top-autors/feedbacker.jpg"></div>
+                        <div class="btn__image" id="btnFeedbackImg" data-slick="8"><img src="img/top-autors/feedbacker.jpg"></div>
+                    </div>
+
+                    <div class="slick__button n1" id="slickBtnF"></div>
+                    
+                    <div class="slick" id="feedbackSlick">
+
+                        <div class="feedback__item" id="feedbackItemID">
+                            <div class="feedback__avatar"><img src="img/top-autors/feedbacker.jpg"></div>
+                            <div class="name">Алина Кравсенко 1</div>
+                            <div class="text">Аватарки + текст отзыва как со стороны Авторов, которые пишут статьи и получают деньги, так и со стороны Аналитиков и Трейдеров, которые используя наш портал, зарабатывают на финансовых рынках. Которые пишут статьи и получают деньги, так и со стороны Аналитиков и Трейдеров, которые используя наш портал.</div>
+                            <h4>Автор</h4>
+                            <div class="line"></div>
+                        </div>
+
+                        <div class="feedback__item" id="feedbackItemID">
+                            <div class="feedback__avatar"><img src="img/top-autors/feedbacker.jpg"></div>
+                            <div class="name">Алина Кравсенко 2</div>
+                            <div class="text">Аватарки + текст отзыва как со стороны Авторов, которые пишут статьи и получают деньги, так и со стороны Аналитиков и Трейдеров, которые используя наш портал, зарабатывают на финансовых рынках. Которые пишут статьи и получают деньги, так и со стороны Аналитиков и Трейдеров, которые используя наш портал.</div>
+                            <h4>Автор</h4>
+                            <div class="line"></div>
+                        </div>
+
+                        <div class="feedback__item" id="feedbackItemID">
+                            <div class="feedback__avatar"><img src="img/top-autors/feedbacker.jpg"></div>
+                            <div class="name">Алина Кравсенко 3</div>
+                            <div class="text">Аватарки + текст отзыва как со стороны Авторов, которые пишут статьи и получают деньги, так и со стороны Аналитиков и Трейдеров, которые используя наш портал, зарабатывают на финансовых рынках. Которые пишут статьи и получают деньги, так и со стороны Аналитиков и Трейдеров, которые используя наш портал.</div>
+                            <h4>Автор</h4>
+                            <div class="line"></div>
+                        </div>
+
+                        <div class="feedback__item" id="feedbackItemID">
+                            <div class="feedback__avatar"><img src="img/top-autors/feedbacker.jpg"></div>
+                            <div class="name">Алина Кравсенко 4</div>
+                            <div class="text">Аватарки + текст отзыва как со стороны Авторов, которые пишут статьи и получают деньги, так и со стороны Аналитиков и Трейдеров, которые используя наш портал, зарабатывают на финансовых рынках. Которые пишут статьи и получают деньги, так и со стороны Аналитиков и Трейдеров, которые используя наш портал.</div>
+                            <h4>Автор</h4>
+                            <div class="line"></div>
+                        </div>
+
+                        <div class="feedback__item" id="feedbackItemID">
+                            <div class="feedback__avatar"><img src="img/top-autors/feedbacker.jpg"></div>
+                            <div class="name">Алина Кравсенко 5</div>
+                            <div class="text">Аватарки + текст отзыва как со стороны Авторов, которые пишут статьи и получают деньги, так и со стороны Аналитиков и Трейдеров, которые используя наш портал, зарабатывают на финансовых рынках. Которые пишут статьи и получают деньги, так и со стороны Аналитиков и Трейдеров, которые используя наш портал.</div>
+                            <h4>Автор</h4>
+                            <div class="line"></div>
+                        </div>
+
+                        <div class="feedback__item" id="feedbackItemID">
+                            <div class="feedback__avatar"><img src="img/top-autors/feedbacker.jpg"></div>
+                            <div class="name">Алина Кравсенко 6</div>
+                            <div class="text">Аватарки + текст отзыва как со стороны Авторов, которые пишут статьи и получают деньги, так и со стороны Аналитиков и Трейдеров, которые используя наш портал, зарабатывают на финансовых рынках. Которые пишут статьи и получают деньги, так и со стороны Аналитиков и Трейдеров, которые используя наш портал.</div>
+                            <h4>Автор</h4>
+                            <div class="line"></div>
+                        </div>
+
+                        <div class="feedback__item" id="feedbackItemID">
+                            <div class="feedback__avatar"><img src="img/top-autors/feedbacker.jpg"></div>
+                            <div class="name">Алина Кравсенко 7</div>
+                            <div class="text">Аватарки + текст отзыва как со стороны Авторов, которые пишут статьи и получают деньги, так и со стороны Аналитиков и Трейдеров, которые используя наш портал, зарабатывают на финансовых рынках. Которые пишут статьи и получают деньги, так и со стороны Аналитиков и Трейдеров, которые используя наш портал.</div>
+                            <h4>Автор</h4>
+                            <div class="line"></div>
+                        </div>
+
+                        <div class="feedback__item" id="feedbackItemID">
+                            <div class="feedback__avatar"><img src="img/top-autors/feedbacker.jpg"></div>
+                            <div class="name">Алина Кравсенко 8</div>
+                            <div class="text">Аватарки + текст отзыва как со стороны Авторов, которые пишут статьи и получают деньги, так и со стороны Аналитиков и Трейдеров, которые используя наш портал, зарабатывают на финансовых рынках. Которые пишут статьи и получают деньги, так и со стороны Аналитиков и Трейдеров, которые используя наш портал.</div>
+                            <h4>Автор</h4>
+                            <div class="line"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="slick__button n2" id="slickBtnS"></div>
+
+                    <div class="feedback__images">
+                        <div class="btn__image" id="btnFeedbackImg2"><img src="img/top-autors/feedbacker.jpg"></div>
+                        <div class="btn__image" id="btnFeedbackImg2"><img src="img/top-autors/feedbacker.jpg"></div>
+                        <div class="btn__image" id="btnFeedbackImg2"><img src="img/top-autors/feedbacker.jpg"></div>
+                        <div class="btn__image" id="btnFeedbackImg2"><img src="img/top-autors/feedbacker.jpg"></div>
+                        <div class="btn__image" id="btnFeedbackImg2"><img src="img/top-autors/feedbacker.jpg"></div>
+                        <div class="btn__image" id="btnFeedbackImg2"><img src="img/top-autors/feedbacker.jpg"></div>
+                        <div class="btn__image" id="btnFeedbackImg2"><img src="img/top-autors/feedbacker.jpg"></div>
+                        <div class="btn__image" id="btnFeedbackImg2"><img src="img/top-autors/feedbacker.jpg"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Registration -->
+        <div class="registration main" id="registrationID">
+            <div class="container">
+                <div class="container__top">
+                    <h3>Для использования инструмента</h3>
+                    <div class="line"></div>
+                    <h2>Пройдите бесплатную регистрацию</h2>
+                </div>
+                <div class="container__bottom">
+
+                    <div class="input__parent"><input type="text" placeholder="Ваше имя" id="inputName"></div>
+                    <div class="input__parent"><input type="text" placeholder="Ваш e-mail" id="inputEmail"></div>
+                    <div class="input__parent"><input type="password" placeholder="Ваш пароль" id="inputPassword"></div>
+                    <div class="input__parent input4"><p><input type="checkbox" value="yes">  Согласен на обработку персональных данных</p></div>
+                    <div class="input__parent"><input type="button" value="Зарегестрироваться" id="inputLogin"></div>
+                    <div class="input__parent"></div>
+                    
+                </div>
+                
+                <footer>
+                    <hr>
+                    <div class="logo__item">
+                        <div class="logo__left">
+                            <img src="img/logo/intro-logo-crown.png" class="logo__crown">
+                            <img src="img/logo/intro-logo.png" class="logo__img">
+                        </div>
+                        <div class="logo__right">
+                            <img src="img/logo/intro-text.png" class="logo__title">
+                            <div class="logo__text">Dynasty of Investors</div>
+                        </div>    
+                    </div>
+
+                    <div class="icons">
+                        <div class="icon__item">
+                            <svg class="icon__svg fb">
+                                <use xlink:href="#fb"></use>
+                            </svg>
+                        </div>
+                        <div class="icon__item">
+                            <svg class="icon__svg vk">
+                                <use xlink:href="#vk"></use>
+                            </svg>
+                        </div>
+                        <div class="icon__item">
+                            <svg class="icon__svg tg">
+                                <use xlink:href="#tg"></use>
+                            </svg>
+                        </div>
+                        <div class="icon__item">
+                            <svg class="icon__svg ok">
+                                <use xlink:href="#ok"></use>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="copyright">
+                        <h6>2017. HAMILTON INVESTMENTS GROUP LTD.</h6>
+                        <h6>© Все права защищены.</h6>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        
+        <!-- Scripts -->
+        <script src="js/hamilton2main.js"></script>
+        <script src="js/jquery.vide.js"></script>
+        <script src="js/jquery.vide.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    </body>
+</html>
