@@ -256,7 +256,7 @@ $(function(){
             
     });
 
-    $('#scrollToLogin').on('click', function(){
+    $('input#scrollToLogin').on('click', function(){
         let registrationOffset = $("#registrationID").offset().top;
 
         $('html, body').animate({scrollTop: registrationOffset + 10}, 700);
