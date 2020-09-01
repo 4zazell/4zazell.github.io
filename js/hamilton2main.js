@@ -310,7 +310,15 @@ $(function(){
         if (!inputCheckbox.cheked) {
             inputCheckbox.css('border', '2px solid red');
         }
+        if(inputName.val().length > 1 & inputEmail.val().length > 1 & inputPassword.val().length > 1 ){
+           setTimeout( thanks,3000); 
+           
+        }
     });
+    
+      function thanks(){
+        window.location.href = "/thanks.html";
+      }
     
 
     //Steps
